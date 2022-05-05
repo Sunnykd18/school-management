@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 
-from .models import ProxyUser, OtpVerify, Instructor, Student
+
 from django.contrib.auth import get_user_model
 
 
@@ -34,11 +34,6 @@ class UserAdmin(DjangoUserAdmin):
         else:
             return []
 
-
-admin.site.register(ProxyUser, UserAdmin,)
-admin.site.register(Instructor)
-admin.site.register(Student)
-admin.site.register(OtpVerify)
 
 @admin.register(get_user_model())
 class UserAdminUpdate(UserAdmin):

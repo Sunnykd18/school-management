@@ -43,19 +43,4 @@ class User(PolymorphicModel, AbstractUser):
         send_mail(subject, message, from_email, [self.email], **kwargs)
 
 
-class ProxyUser(User):
-    pass
 
-    class Meta:
-        app_label = 'auth'
-        proxy = True
-        verbose_name = 'User'
-        verbose_name_plural = 'Users'
-
-
-class Instructor(User):
-    pass
-
-
-class Student(User):
-    pass
